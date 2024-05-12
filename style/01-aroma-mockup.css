@@ -1,0 +1,292 @@
+/* 변수 */
+:root {
+  --base-font-family: "Sarabun", sans-serif;
+
+  --font-size-large: 2.5rem; 
+  --font-size-normal: 1.125rem;
+  --font-size-small: 1rem;
+
+  --login-section-space: 42%;
+
+  --gray-d: #ddd;
+  --gray-c: #ccc;
+  --gray-9: #999;
+  --gray-7: #777;
+  --black: #121212;
+  --white: #fcfcfc;
+  --bg-color: #fcfcfc;
+  --shadow-color: #ededed;
+  --focus-color: #FF185A;
+}
+
+/* 폰트 */
+body {
+  font-family: var(--base-font-family);
+  color: var(--gray-9);
+}
+
+/* a11y-hidden */
+.a11y-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0,0,0,0);
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
+
+/* 스타일 초기화 */
+body *, body *::before, body *::after {
+  box-sizing: border-box;
+  line-height: 1.15;
+}
+
+h1, h2 {
+  font: inherit;
+  font-size: 1em;
+  margin: 0;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  padding-inline-start: 0;
+  margin: 0;
+}
+
+fieldset{
+  border: 0;
+  margin: 0;
+  padding: 0
+}
+
+input, button{
+  font: inherit;
+}
+
+
+
+/* 배경 */
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  background: url(../image/bart-zimny-W5XTTLpk1-I-unsplash.jpg) no-repeat;
+  background-position: right;
+  background-size: calc(100% - var(--login-section-space));
+}
+
+/* 헤더 영역 */
+header {
+  margin: 0 120px;
+  height: 10vh;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    font-size: var(--font-size-large);
+    font-weight: 700;
+    color: var(--gray-7);
+
+    span {
+      display: inline-block;
+      transform: scaleX(-1) translate(3px);
+    }
+  }
+
+  nav {
+    width: calc(100% - var(--login-section-space));
+  }
+
+  .menu-bar {
+    padding-left: 20%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    a {
+      color: var(--white);
+      font-weight: 500;
+      font-size: var(--font-size-small);
+      padding: 5px;
+    }
+  }
+}
+
+/* 메인 영역 */
+/* 로그인 컴포넌트 */
+.login-input {
+  position: relative;
+  font-size: var(--font-size-small);
+
+  label {
+    position: absolute;
+    padding: 16px 0 0 18px;
+    color: var(--gray-c);
+  }
+
+  input {
+    padding: 42px 24px 14px 24px;
+    font-weight: 400;
+    border: 1px solid var(--gray-c);
+  }
+  #userEmail {
+    border-bottom: 0;
+  
+  }
+
+  :focus {
+    outline: none;
+    border-left: 1px solid var(--focus-color);
+    box-shadow: inset 2px 0 0 0 var(--focus-color);
+  }
+
+  ::placeholder {
+    color: var(--gray-d);
+    opacity: 1; /* Firefox */
+  }
+}
+
+em {
+  font-style: normal;
+  color: var(--black);
+}
+
+/* 로그인 섹션 배치 */
+.login-section {
+  padding: 100px 160px 0 120px;
+  width: var(--login-section-space);
+
+  .welcome-txt {
+    font-size: var(--font-size-normal);
+    
+    h2 {
+      font-size: var(--font-size-large);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .login-input {
+    margin: 56px 0 42px;
+    box-shadow: 0 36px 80px -2px var(--shadow-color);
+
+    input {
+      width: 100%;
+    }
+  }
+
+  .login-extras {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    font-size: var(--font-size-small);
+
+    a {
+      color: var(--black);
+      font-weight: 500;
+    }
+  }
+
+  .form-btn-group {
+    margin: 32px 0 64px;
+
+    button {
+      padding: 10px 16px;
+      width: 130px;
+      border-radius: 5px;
+      margin-right: 18px;
+    }
+    .login-btn {
+      background-color: var(--black);
+      color: #fff;
+      border: 1px solid var(--black);
+    }
+    .sign-up-btn {
+      background-color: var(--white);
+      color: var(--gray-7);
+      border: 1px solid var(--gray-c);
+    }
+  }
+
+  .terms-txt {
+    font-size: var(--font-size-small);
+
+    a {
+      color: var(--black);
+      font-weight: 500;
+    }
+  }
+}
+
+/* 기타 요소 */
+main {
+  position: relative;
+  height: 90vh;
+
+  .play-btn {
+    position: absolute;
+    top: 60%;
+    left: calc(var(--login-section-space) - 45px);
+  
+    background: var(--focus-color);
+    width: 90px;
+    height: 90px;
+    border: 0;
+    border-radius: 50%;
+    color: var(--white);
+    font-size: 0.875rem;
+    user-select: none;
+  }
+  
+  .glass {
+    position: absolute;
+    top: 18%;
+    left: calc(50% - 190px + var(--login-section-space) / 2);
+    width: 380px;
+    height: 380px;
+    border-radius: 25px;
+  
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(40px);
+  
+    font-size: 24rem;
+    font-weight: 600;
+    color: var(--white);
+    text-shadow: 2px 24px 5px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    line-height: 0.65;
+    user-select: none;
+  }
+  
+  .page-btn-group {
+    position: absolute;
+    bottom: 8%;
+    right: 60px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: right;
+
+    button {
+      color: var(--white);
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 3px;
+      padding: 12px 10px;
+      width: 100px;
+      margin-left: 18px;
+    }
+    button:hover {
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(40px);
+      border: 0;
+      transition-duration: 300ms;
+    }
+  }
+}
